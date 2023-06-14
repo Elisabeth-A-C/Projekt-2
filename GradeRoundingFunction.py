@@ -1,9 +1,6 @@
 import numpy as np
 import math
 
-inp = np.random.uniform(-3, 12, 10)
-
-
 def roundGrade(grades):
     # Round up if the grade is right in between two grades.
     # Author: Filip
@@ -28,5 +25,5 @@ def roundGrade(grades):
     return gradesRounded
 
 # Test
+#inp = np.random.uniform(-3, 12, 10)
 #print(roundGrade(inp))
-
