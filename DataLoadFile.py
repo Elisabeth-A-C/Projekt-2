@@ -1,0 +1,39 @@
+# Importing libraries
+import numpy as np
+import pandas as pd
+
+def dataLoad():
+    # Author: Elisabeth Astrup Christensen, s224063@dtu.dk, 2023
+
+    # Load data if it exists
+    found = False
+    while not found:
+        try:
+            filename = input("Enter filename: ")
+            loadedData = pd.read_csv(filename)
+            found = True
+            print("Data has been succesfully loaded.")
+
+        except: 
+            print("Couldn't load the file. Please enter a valid filename.")
+            continue
+
+    
+    # Display loaded data
+    print('Here is the data loaded: ')
+    print('')
+    print(loadedData)
+    print('')
+
+    # Display number of students
+    numberOfStudents = len(loadedData.StudentID)
+    print("The number of students is: {}".format(numberOfStudents))
+    print('')
+
+    # Display number of assignments
+    numberOfAssignments = len(loadedData.iloc[0,2:])
+    print("The number of assignments is: {}".format(numberOfAssignments))
+    print('')
+
+    # Return loaded data
+    return loadedData

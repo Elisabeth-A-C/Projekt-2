@@ -6,7 +6,7 @@ import math
 from GradeRoundingFunction import roundGrade
 
 def computeFinalGrades(grades):
-    # Author: Elisabeth
+    # Author: Elisabeth Astrup Christensen, s224063@dtu.dk, 2023
 
     gradesFinal = np.array([])
 

@@ -3,7 +3,7 @@ import math
 
 def roundGrade(grades):
     # Round up if the grade is right in between two grades.
-    # Author: Filip
+    # Author: Filip Pisinger, s224072@dtu.dk, 2023
     i = 0
     while i < len(grades):
         if grades[i] >= 11:
