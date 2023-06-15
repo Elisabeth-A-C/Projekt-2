@@ -87,7 +87,6 @@ def finalGrades(grades):
 
 
 def plotFunction(loadedData):
-    filteredData = loadedData
     while True:
         menuItems = np.array(["1. Plot: Grades Per Assignment", "2. Final Grades Distribution", "3. Return to menu"])
         menuChoice = displayMenu("Please enter a number corresponding to your choice of plot", menuItems)
@@ -111,4 +110,3 @@ def plotFunction(loadedData):
             print("Returning to Menu")
             print(" ")
             break
-    return filteredData
