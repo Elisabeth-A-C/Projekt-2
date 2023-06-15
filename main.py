@@ -11,8 +11,10 @@ import math
 
 # Import other files
 from DataLoadFile import convertLoadedDataToGrades
+from DataLoadFile import dataLoad
 from displayMenuFile import displayMenu
 from GradesPlotFunction import plotFunction
+from CheckDataErrorsFile import checkErrors
 
 # Import function used for global variables
 import globalVariablesFile as g
@@ -26,7 +28,8 @@ g.init()
 
 # Ask user to load data
 print("Please enter a valid filename in .csv format.")
-convertLoadedDataToGrades()
+loadedData = dataLoad()
+grades = convertLoadedDataToGrades(loadedData)
 
 # While loop to show menu until the user press the quit button
 while True:
@@ -42,11 +45,12 @@ while True:
 
     # If the user choose to "Load new data"
     if menuChoice == 1:
-        convertLoadedDataToGrades()
+        loadedData = dataLoad()
+        grades = convertLoadedDataToGrades(loadedData)
 
     # If the user choose to "Check for data errors"
     elif menuChoice == 2:
-        print('choice 2')
+        checkErrors(loadedData)
 
     # If the user choose to "Generate plots"
     elif menuChoice == 3: 

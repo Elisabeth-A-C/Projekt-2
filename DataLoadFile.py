@@ -44,9 +44,8 @@ def dataLoad():
     return loadedData
 
 
-def convertLoadedDataToGrades():
+def convertLoadedDataToGrades(loadedData):
     # Convert loadedData to grades
-    loadedData = dataLoad()
     grades = loadedData.iloc[:,2:]
     grades = np.array(grades)
 
