@@ -41,5 +41,8 @@ def dataLoad():
     print("The number of assignments is: {}".format(numberOfAssignments))
     print('')
 
+    # Convert loadedData to grades
+    grades = loadedData.iloc[:,2:]
+
     # Return loaded data
-    return loadedData
+    return grades

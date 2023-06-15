@@ -12,6 +12,7 @@ import math
 # Import other files
 from DataLoadFile import dataLoad
 from displayMenuFile import displayMenu
+from GradesPlotFunction import plotFunction
 
 # Import function used for global variables
 import globalVariablesFile as g
@@ -49,7 +50,7 @@ while True:
 
     # If the user choose to "Generate plots"
     elif menuChoice == 3: 
-        print('choice 3')
+        plotFunction(loadedData)
 
     # If the user choose to "Display list of grades"
     elif menuChoice == 4:
