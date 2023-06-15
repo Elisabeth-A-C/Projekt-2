@@ -4,13 +4,12 @@ import math
 
 # Import other files
 from GradeRoundingFunction import roundGrade
-from DataLoadFile import dataLoad
+from DataLoadFile import convertLoadedDataToGrades
 
 def computeFinalGrades():
     # Author: Elisabeth Astrup Christensen, s224063@dtu.dk, 2023
 
-    grades = dataLoad()
-    grades = np.array(grades)
+    grades = convertLoadedDataToGrades()
 
     gradesFinal = np.array([])
 

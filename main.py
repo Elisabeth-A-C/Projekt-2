@@ -10,7 +10,7 @@ import numpy as np
 import math
 
 # Import other files
-from DataLoadFile import dataLoad
+from DataLoadFile import convertLoadedDataToGrades
 from displayMenuFile import displayMenu
 from GradesPlotFunction import plotFunction
 
@@ -26,7 +26,7 @@ g.init()
 
 # Ask user to load data
 print("Please enter a valid filename in .csv format.")
-loadedData = dataLoad()
+convertLoadedDataToGrades()
 
 # While loop to show menu until the user press the quit button
 while True:
@@ -42,7 +42,7 @@ while True:
 
     # If the user choose to "Load new data"
     if menuChoice == 1:
-        loadedData = dataLoad()
+        convertLoadedDataToGrades()
 
     # If the user choose to "Check for data errors"
     elif menuChoice == 2:
@@ -50,7 +50,8 @@ while True:
 
     # If the user choose to "Generate plots"
     elif menuChoice == 3: 
-        plotFunction(loadedData)
+        print('choice3')
+        #plotFunction()
 
     # If the user choose to "Display list of grades"
     elif menuChoice == 4:
