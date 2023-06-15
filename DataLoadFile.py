@@ -2,6 +2,9 @@
 import numpy as np
 import pandas as pd
 
+# Import function used for global variables
+import globalVariablesFile as g
+
 def dataLoad():
     # Author: Elisabeth Astrup Christensen, s224063@dtu.dk, 2023
 
@@ -13,6 +16,9 @@ def dataLoad():
             loadedData = pd.read_csv(filename)
             found = True
             print("Data has been succesfully loaded.")
+
+            # Setting global variable used to show filename
+            g.globalDataFile = filename
 
         except: 
             print("Couldn't load the file. Please enter a valid filename.")
