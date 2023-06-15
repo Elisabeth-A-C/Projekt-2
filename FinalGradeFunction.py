@@ -6,10 +6,10 @@ import math
 from GradeRoundingFunction import roundGrade
 from DataLoadFile import convertLoadedDataToGrades
 
-def computeFinalGrades():
+def computeFinalGrades(grades):
     # Author: Elisabeth Astrup Christensen, s224063@dtu.dk, 2023
 
-    grades = convertLoadedDataToGrades()
+    #grades = convertLoadedDataToGrades(loadedData)
 
     gradesFinal = np.array([])
 
@@ -34,4 +34,4 @@ def computeFinalGrades():
 
 # Test
 #print(computeFinalGrades(np.array([[-3,4,7],[2,4,4],[7,10,4],[4,4,12],[10,12,12]])))
-print(computeFinalGrades())
+#print(computeFinalGrades(grades))

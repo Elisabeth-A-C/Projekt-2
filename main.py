@@ -47,15 +47,16 @@ while True:
     if menuChoice == 1:
         loadedData = dataLoad()
         grades = convertLoadedDataToGrades(loadedData)
+        g.globalCheckErrors = "No"
 
     # If the user choose to "Check for data errors"
     elif menuChoice == 2:
         checkErrors(loadedData)
+        g.globalCheckErrors = "Yes"
 
     # If the user choose to "Generate plots"
     elif menuChoice == 3: 
-        print('choice3')
-        #plotFunction()
+        plotFunction(grades, loadedData) # TO-DO: insert updated data from checkErrors
 
     # If the user choose to "Display list of grades"
     elif menuChoice == 4:

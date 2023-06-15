@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 
 # Import other files
 from displayMenuFile import displayMenu
+from FinalGradeFunction import computeFinalGrades
 
 def gradesPerAssignment(loadedData,grades):
     # List with titles from data
@@ -70,7 +71,7 @@ def finalGrades(grades):
     import matplotlib.pyplot as plt
     import math
     #The NxM matrix is made into a single vector of grades, to manage counting:
-    inp = computeFinaleGrades()
+    inp = computeFinalGrades(grades)
     inp = list(inp.astype('str'))
     #Counting amount of grades
     data = np.array([inp.count("-3"),inp.count("0"),inp.count("2"),inp.count("4"),inp.count("7"),inp.count("10"),inp.count("12")])
