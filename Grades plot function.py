@@ -4,11 +4,11 @@ Created on Wed Jun 14 08:16:18 2023
 
 @author: migpi
 """
+# Importing libraries
 import numpy as np
-import matplotlib.pyplot as plt
 import math
-
-
+import matplotlib.pyplot as plt
+from displaymenuFile import displayMenu
 
 def gradesPerAssignment(grades):
     inp = grades
@@ -83,3 +83,32 @@ def finalGrades(grades):
     plt.title("Distribution of grades")
     plt.show()
     # Plot is now shown onscreen
+
+
+
+def plotFunction(loadedData):
+    filteredData = loadedData
+    while True:
+        menuItems = np.array(["1. Plot: Grades Per Assignment", "2. Final Grades Distribution", "3. Return to menu"])
+        menuChoice = displayMenu("Please enter a number corresponding to your choice of plot", menuItems)
+
+        if menuChoice == 1:
+            print(" ")
+            result = gradesPerAssignment(loadedData)
+            #Prints
+            print(result)       
+
+        elif menuChoice == 2:
+            # The user needs to choose filter on range of growth rate
+            print(" ")
+            result = finalGrades(loadedData)
+            #print("The distribution of bacteria by numbers is: {:f}".format(result))
+            print(result)
+        
+        elif menuChoice == 3:
+            # Go back to menu
+            print(" ")
+            print("Returning to Menu")
+            print(" ")
+            break
+    return filteredData
