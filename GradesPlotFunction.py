@@ -12,11 +12,14 @@ import matplotlib.pyplot as plt
 # Import other files
 from displayMenuFile import displayMenu
 
-def gradesPerAssignment(grades):
-    inp = grades
-    names = inp[0]
-    #The grades of each assignment is split to be put on axis:
-    data = inp[1::]
+def gradesPerAssignment(loadedData,grades):
+    # List with titles from data
+    inp = grades.T
+    inp = np.array(inp)
+    names = list(loadedData)
+    names = names[2::]
+    #The grades of each asnp.array(inp)signment is split to be put on axis:
+    data = inp
     #Creating x axis list corresponding to assignments:
     x = np.array([])
     i=0
@@ -54,6 +57,7 @@ def gradesPerAssignment(grades):
     plt.plot(a, meanValues,label="Mean")
     plt.title("Grades for each assignment")
     plt.yticks([-3,0,2,4,7,10,12])
+    plt.xlabel("Assignments")
     plt.ylabel("Grades")
     plt.xticks(a, names)
     plt.legend()
@@ -66,8 +70,7 @@ def finalGrades(grades):
     import matplotlib.pyplot as plt
     import math
     #The NxM matrix is made into a single vector of grades, to manage counting:
-    inp = grades[1::]
-    inp = np.reshape(inp, -1)
+    inp = computeFinaleGrades()
     inp = list(inp.astype('str'))
     #Counting amount of grades
     data = np.array([inp.count("-3"),inp.count("0"),inp.count("2"),inp.count("4"),inp.count("7"),inp.count("10"),inp.count("12")])
@@ -87,8 +90,7 @@ def finalGrades(grades):
     # Plot is now shown onscreen
 
 
-
-def plotFunction(loadedData):
+def plotFunction(grades, loadedData):
     while True:
         menuItems = np.array(["1. Plot: Grades Per Assignment", "2. Final Grades Distribution", "3. Return to menu"])
         menuChoice = displayMenu("Please enter a number corresponding to your choice of plot", menuItems)
