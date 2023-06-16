@@ -24,13 +24,15 @@ def computeFinalGrades(grades):
                 gradesFinal = np.concatenate((gradesFinal, np.array([-3])))
             
             else:
+                minPos = np.array([])
                 minPos = np.where(x == x.min())
-                if len(minPos) == len(x):
-                    x = np.delete(x, minPos[0])
+                #if len(minPos) == len(x):
+                    #x = np.delete(x, minPos[0])
+                x = np.delete(x, minPos[0][0])
                 gradesFinal = np.concatenate((gradesFinal, np.array([np.mean(x)])))
                 gradesFinal = roundGrade(gradesFinal)
 
     return gradesFinal
 
 # Test
-#print(computeFinalGrades(np.array([[-3,4,7],[2,4,4],[7,10,4],[4,4,12],[10,12,12]])))
+#print(computeFinalGrades(np.array([[-3,4,7],[0,4,4],[0,10,4],[4,4,12],[10,12,12]])))

@@ -9,6 +9,12 @@ Requires minimum Python 3.9. Otherwise delete the type declaration on function p
 import numpy as np
 import math
 
+#Setting directory to current file directory
+import os
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
 # Import other files
 from DataLoadFile import convertLoadedDataToGrades
 from DataLoadFile import dataLoad
