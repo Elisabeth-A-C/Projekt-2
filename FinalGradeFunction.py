@@ -14,7 +14,7 @@ def computeFinalGrades(grades):
     gradesFinal = np.array([])
 
     if grades.shape[1] == 1:
-        gradesFinal = grades
+        gradesFinal = np.concatenate(grades) # use np.concatenate to flatten the array
 
     else:
         for i in range(grades.shape[0]):

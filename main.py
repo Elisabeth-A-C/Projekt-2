@@ -42,7 +42,7 @@ grades = convertLoadedDataToGrades(loadedData)
 while True:
     
     print('')
-    print("At all times you can enter '5050' in a menu to quit the program.")
+    print("At all times you can enter '5050' (which is all numbers from 1-100, summed) in a menu to quit the program.")
     print("Datafile: " + g.globalDataFile)
     print("Checked for errors?: " + g.globalCheckErrors)
 
