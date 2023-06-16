@@ -8,3 +8,6 @@ def init():
 
     global globalCheckErrors
     globalCheckErrors = "No" # global variable
+
+    global pleaseQuitProgram
+    pleaseQuitProgram = False # global variable made to be able to quit the program at all times

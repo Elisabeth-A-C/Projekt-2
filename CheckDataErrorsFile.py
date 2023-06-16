@@ -25,8 +25,10 @@ def checkErrors(loadedData):
     newStudentIDArray = np.array([])
     listOfOtherDuplicants = list() # to delete
 
+    print('')
+
     for i in range(np.size(studentIDArray)):
-        if studentIDArray[i] not in newStudentIDArray:
+        if studentIDArray[i] not in " ".join(newStudentIDArray):
             newStudentIDArray = np.concatenate((newStudentIDArray, np.array([studentIDArray[i]])))
 
         else:

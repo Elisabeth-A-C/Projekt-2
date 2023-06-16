@@ -35,6 +35,7 @@ grades = convertLoadedDataToGrades(loadedData)
 while True:
     
     print('')
+    print("At all times you can enter '5050' in a menu to quit the program.")
     print("Datafile: " + g.globalDataFile)
     print("Checked for errors?: " + g.globalCheckErrors)
 
@@ -57,6 +58,8 @@ while True:
     # If the user choose to "Generate plots"
     elif menuChoice == 3: 
         plotFunction(grades, loadedData) # TO-DO: insert updated data from checkErrors
+        if g.pleaseQuitProgram == True:
+            break
 
     # If the user choose to "Display list of grades"
     elif menuChoice == 4:
@@ -66,6 +69,16 @@ while True:
     elif menuChoice == 5:
         print("Quit has been chosen. I hope you enjoyed experiencing our menu. :^)")
         break
+
+    elif g.pleaseQuitProgram == True:
+        menuItems = np.array(["1. Yes, quit the program.", "2. No, please go back to the previous menu."])
+        menuChoice = displayMenu("Are you sure you want to quit the program?", menuItems)
+
+        if menuChoice == 1:
+            print("You have quit the program. I hope you enjoyed experiencing our menu. :^)")
+            break
+        if menuChoice == 2:
+            continue
 
     else:
         pass

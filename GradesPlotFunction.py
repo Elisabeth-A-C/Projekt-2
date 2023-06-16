@@ -13,6 +13,9 @@ import matplotlib.pyplot as plt
 from displayMenuFile import displayMenu
 from FinalGradeFunction import computeFinalGrades
 
+# Import function used for global variables
+import globalVariablesFile as g
+
 def gradesPerAssignment(loadedData,grades):
     # List with titles from data
     inp = grades.T
@@ -115,3 +118,13 @@ def plotFunction(grades, loadedData):
             print("Returning to Menu")
             print(" ")
             break
+
+        elif g.pleaseQuitProgram == True:
+            menuItems = np.array(["1. Yes, quit the program.", "2. No, please go back to the previous menu."])
+            menuChoice = displayMenu("Are you sure you want to quit the program?", menuItems)
+
+            if menuChoice == 1:
+                print("You have quit the program. I hope you enjoyed experiencing our menu. :^)")
+                break
+            if menuChoice == 2:
+                continue

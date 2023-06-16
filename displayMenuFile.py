@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 # Import other files
 from inputNumberFile import inputNumber
 
+# Import function used for global variables
+import globalVariablesFile as g
+
 def displayMenu(prompt: str, options: str) -> float:
 # This function was created during the exercises in module 5.
 
@@ -30,9 +33,12 @@ def displayMenu(prompt: str, options: str) -> float:
 
     # Get a valid menu choice
     choice = 0
-    while not(np.any(choice == np.arange(len(options))+1)):
-        choice = inputNumber(prompt + ": ") # obs: there is a bug in Visual Studio Code where it sometimes only loads the menu after some buttom has been pressed but this does not occur in Jupyter Notebook
-        if not(np.any(choice == np.arange(len(options))+1)):
+    while not(np.any(choice == (np.arange(len(options))+1)) or (choice == 5050)):
+        choice = inputNumber(prompt + ": ") 
+        if choice == 5050:
+            g.pleaseQuitProgram = True
+            break
+        elif not(np.any(choice == np.arange(len(options))+1)):
             print(prompt + ".")
 
     return choice
