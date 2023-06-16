@@ -127,4 +127,5 @@ def plotFunction(grades, loadedData):
                 print("You have quit the program. I hope you enjoyed experiencing our menu. :^)")
                 break
             if menuChoice == 2:
+                g.pleaseQuitProgram = False
                 continue

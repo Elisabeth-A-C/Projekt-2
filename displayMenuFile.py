@@ -35,7 +35,7 @@ def displayMenu(prompt: str, options: str) -> float:
     choice = 0
     while not(np.any(choice == (np.arange(len(options))+1)) or (choice == 5050)):
         choice = inputNumber(prompt + ": ") 
-        if choice == 5050:
+        if choice == 5050: # 5050 since that is all numbers from 1 to 100, summed
             g.pleaseQuitProgram = True
             break
         elif not(np.any(choice == np.arange(len(options))+1)):

@@ -15,6 +15,7 @@ from DataLoadFile import dataLoad
 from displayMenuFile import displayMenu
 from GradesPlotFunction import plotFunction
 from CheckDataErrorsFile import checkErrors
+from DisplayListOfGradesFile import displayListOfGrades
 
 # Import function used for global variables
 import globalVariablesFile as g
@@ -52,7 +53,7 @@ while True:
 
     # If the user choose to "Check for data errors"
     elif menuChoice == 2:
-        checkErrors(loadedData)
+        checkedDataArray = checkErrors(loadedData)
         g.globalCheckErrors = "Yes"
 
     # If the user choose to "Generate plots"
@@ -63,7 +64,11 @@ while True:
 
     # If the user choose to "Display list of grades"
     elif menuChoice == 4:
-        print('choice 4')
+        if g.globalCheckErrors == "No":
+            checkedDataArray = np.array(loadedData)
+        elif g.globalCheckErrors == "Yes":
+            pass
+        displayListOfGrades(checkedDataArray, loadedData)
 
     # If the user choose to "Quit" 
     elif menuChoice == 5:
@@ -78,6 +83,7 @@ while True:
             print("You have quit the program. I hope you enjoyed experiencing our menu. :^)")
             break
         if menuChoice == 2:
+            g.pleaseQuitProgram = False
             continue
 
     else:

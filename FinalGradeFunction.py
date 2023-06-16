@@ -34,4 +34,3 @@ def computeFinalGrades(grades):
 
 # Test
 #print(computeFinalGrades(np.array([[-3,4,7],[2,4,4],[7,10,4],[4,4,12],[10,12,12]])))
-#print(computeFinalGrades(grades))

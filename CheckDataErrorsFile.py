@@ -68,3 +68,5 @@ def checkErrors(loadedData):
     
     print("Here is the updated version of the data: ")
     print(loadedDataArray)
+
+    return loadedDataArray # containing the checked data
