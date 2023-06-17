@@ -64,7 +64,12 @@ while True:
 
     # If the user choose to "Generate plots"
     elif menuChoice == 3: 
-        plotFunction(grades, loadedData) # TO-DO: insert updated data from checkErrors
+        if g.globalCheckErrors == "No":
+            checkedDataArray = np.array(loadedData)
+        elif g.globalCheckErrors == "Yes":
+            pass
+        plotFunction(checkedDataArray, loadedData)
+        
         if g.pleaseQuitProgram == True:
             break
 

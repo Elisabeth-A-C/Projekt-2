@@ -28,7 +28,7 @@ def gradesPerAssignment(loadedData,grades):
     x = np.array([])
     i=0
     while i < len(data):
-        x = np.concatenate((x,np.ones(len(data[1]))*i))
+        x = np.concatenate((x,np.ones(len(data[0]))*i))
         i+=1
     # Creating mean values:
     i = 0
@@ -94,8 +94,11 @@ def finalGrades(loadedData,grades):
     # Plot is now shown onscreen
 
 
-def plotFunction(grades, loadedData):
+def plotFunction(checkedDataArray, loadedData):
     while True:
+        # Converting grades from checkedDataArray (in case the user has clicked on "Check for data errors" button)
+        grades = checkedDataArray[:,2:]
+
         menuItems = np.array(["1. Plot: Grades Per Assignment", "2. Final Grades Distribution", "3. Return to menu"])
         menuChoice = displayMenu("Please enter a number corresponding to your choice of plot", menuItems)
 
