@@ -2,7 +2,10 @@
 ### Group Elif File ###
 
 '''
-Requires minimum Python 3.9. Otherwise delete the type declaration on function parameters.
+- Requires minimum Python 3.9. Otherwise delete the type declaration on function parameters.
+- In this project it has been assumed that the given .csv data file is not missing any single grades,
+that it is comma-seperated, and that it contains at least one student and one assignment (so that the file is complete)
+
 '''
 
 # Importing libraries

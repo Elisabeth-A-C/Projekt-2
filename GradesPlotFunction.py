@@ -58,13 +58,13 @@ def gradesPerAssignment(loadedData,grades):
         i+=1
     # plotting
     plt.plot(x, y, "r*")
-    plt.plot(a, meanValues,label="Mean")
+    plt.plot(a, meanValues)
     plt.title("Grades for each assignment")
     plt.yticks([-3,0,2,4,7,10,12])
     plt.xlabel("Assignments")
     plt.ylabel("Grades")
     plt.xticks(a, names)
-    plt.legend()
+    plt.legend(["Grades" , "Mean"])
     plt.grid()
     plt.show()
 

@@ -1,7 +1,6 @@
 # Importing libraries
 import numpy as np
 import math
-import matplotlib.pyplot as plt
 
 # Import other files
 from inputNumberFile import inputNumber
