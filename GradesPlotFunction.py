@@ -66,7 +66,7 @@ def gradesPerAssignment(loadedData,grades):
     plt.xticks(a, names)
     plt.legend()
     plt.grid()
-    plt.show
+    plt.show()
 
 def finalGrades(loadedData,grades):
     import numpy as np
@@ -100,17 +100,11 @@ def plotFunction(grades, loadedData):
         menuChoice = displayMenu("Please enter a number corresponding to your choice of plot", menuItems)
 
         if menuChoice == 1:
-            print(" ")
-            result = gradesPerAssignment(loadedData,grades)
-            #Prints
-            print(result)       
+            gradesPerAssignment(loadedData,grades)    
 
         elif menuChoice == 2:
             # The user needs to choose filter on range of growth rate
-            print(" ")
-            result = finalGrades(loadedData,grades)
-            #print("The distribution of bacteria by numbers is: {:f}".format(result))
-            print(result)
+            finalGrades(loadedData,grades)
         
         elif menuChoice == 3:
             # Go back to menu
