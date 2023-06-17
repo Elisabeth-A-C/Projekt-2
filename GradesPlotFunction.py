@@ -68,17 +68,16 @@ def gradesPerAssignment(loadedData,grades):
     plt.grid()
     plt.show
 
-
-def finalGrades(grades):
+def finalGrades(loadedData,grades):
     import numpy as np
     import matplotlib.pyplot as plt
     import math
     #The NxM matrix is made into a single vector of grades, to manage counting:
     inp = computeFinalGrades(grades)
+    inp = inp.astype('int')
     inp = list(inp.astype('str'))
     #Counting amount of grades
     data = np.array([inp.count("-3"),inp.count("0"),inp.count("2"),inp.count("4"),inp.count("7"),inp.count("10"),inp.count("12")])
-    print(data)
     #Input Data in plot:
     inp = {'-3':data[0], '00':data[1], '02':data[2], '4':data[3],'7':data[4],'10':data[5],'12':data[6]}
     Grade = list(inp.keys())
@@ -90,6 +89,7 @@ def finalGrades(grades):
     plt.xlabel("Grade on 7-step scale")
     plt.ylabel("Amount of individual grade")
     plt.title("Distribution of grades")
+    plt.grid()
     plt.show()
     # Plot is now shown onscreen
 
@@ -101,14 +101,14 @@ def plotFunction(grades, loadedData):
 
         if menuChoice == 1:
             print(" ")
-            result = gradesPerAssignment(loadedData)
+            result = gradesPerAssignment(loadedData,grades)
             #Prints
             print(result)       
 
         elif menuChoice == 2:
             # The user needs to choose filter on range of growth rate
             print(" ")
-            result = finalGrades(loadedData)
+            result = finalGrades(loadedData,grades)
             #print("The distribution of bacteria by numbers is: {:f}".format(result))
             print(result)
         
