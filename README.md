@@ -40,3 +40,4 @@ In the main menu, the user can choose to:
 
 
 ## Global variables
+To make it possible to use global variables in Python, the global variables have been defined in the globalVariablesFile which contains the init function that initializes the global variables. This function is called at the beginning of the main script so that the global variables are initialized here. The global variables can then be called when writing 'import globalVariablesFile as g' at the beginning of a file, and by calling the global variable with 'g.' in front of the global variable name.
