@@ -35,11 +35,13 @@ In the main menu, the user can choose to:
         
     1. "Load new data". This is done in the same way as when the data was loaded at the beginning of the program. 
         
-    2. "Check for data errors". This is done using the checkErrors function. Duplicate students are removed, and grades not on the 7-step grading scale are rounded to a valid grade.
+    2. "Check for data errors". This is done using the checkErrors function. 
+    Duplicate students are removed, and grades not on the 7-step grading scale are rounded to a valid grade.
         
     3. "Generate plots". This is done using functions from the GradesPlotFunction file.
         
-    4. "Display list of grades". This is done using the displayListOfGrades function. The data is shown, now including the final grade for each student, calculated using the computeFinalGrades function. 
+    4. "Display list of grades". This is done using the displayListOfGrades function. 
+    The data is shown, now including the final grade for each student, calculated using the computeFinalGrades function. 
         
     5. "Quit". This is done by breaking the while loop that the main menu runs in. 
 
