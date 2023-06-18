@@ -8,6 +8,7 @@ Created on Wed Jun 14 08:16:18 2023
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 
 # Import other files
 from displayMenuFile import displayMenu
@@ -88,8 +89,9 @@ def finalGrades(loadedData,grades):
             width = 0.4)
     plt.xlabel("Grade on 7-step scale")
     plt.ylabel("Amount of individual grade")
+    plt.gca().yaxis.set_major_locator(mticker.MultipleLocator(1)) # to only show integers on y-axis
     plt.title("Distribution of grades")
-    plt.grid()
+    plt.grid(axis="y")
     plt.show()
     # Plot is now shown onscreen
 

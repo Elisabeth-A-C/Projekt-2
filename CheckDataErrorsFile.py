@@ -1,5 +1,6 @@
 # Importing libraries
 import numpy as np
+import pandas as pd
 import math
 
 # Import other files
@@ -43,8 +44,15 @@ def checkErrors(loadedData):
     
 
     loadedDataArray = np.delete(loadedDataArray, listOfOtherDuplicants, axis=0)
-    print("Here is the updated version of the data: ")
-    print(loadedDataArray)
+    
+    # Format data to show
+    titles = list(loadedData)
+    titles = titles[::]
+    loadedDataFormatted = pd.DataFrame(loadedDataArray) 
+    loadedDataFormatted.columns = titles
+
+    print("Here is the updated version of the data after checking for duplicant students: ")
+    print(loadedDataFormatted)
     print('')
 
 
@@ -66,7 +74,13 @@ def checkErrors(loadedData):
                 print("The grade {} has been rounded to {}. The grade was recieved by {}, {} in {}.".format(grades[i,j], roundGrade(np.array([grades[i,j]]))[0], loadedDataArray[i,0], loadedDataArray[i,1], loadedData.columns[j+2]))
                 loadedDataArray[i,j+2] = roundGrade(np.array([grades[i,j]]))[0]
     
-    print("Here is the updated version of the data: ")
-    print(loadedDataArray)
+    # Format data to show
+    titles = list(loadedData)
+    titles = titles[::]
+    loadedDataFormatted = pd.DataFrame(loadedDataArray) 
+    loadedDataFormatted.columns = titles
+
+    print("Here is the updated version of the data after checking for errors in grades: ")
+    print(loadedDataFormatted)
 
     return loadedDataArray # containing the checked data
