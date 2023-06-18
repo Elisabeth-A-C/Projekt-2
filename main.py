@@ -2,7 +2,7 @@
 ### Group Elif File ###
 
 '''
-- Requires minimum Python 3.9. Otherwise delete the type declaration on function parameters.
+- Requires minimum Python 3.9. Otherwise you will need to delete the type declaration on function parameters.
 - In this project it has been assumed that the given .csv data file is not missing any single grades,
 that it is comma-seperated, and that it contains at least one student and one assignment (so that the file is complete)
 
@@ -12,7 +12,7 @@ that it is comma-seperated, and that it contains at least one student and one as
 import numpy as np
 import math
 
-#Setting directory to current file directory
+# Setting directory to current file directory
 import os
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
@@ -44,6 +44,7 @@ grades = convertLoadedDataToGrades(loadedData)
 # While loop to show menu until the user press the quit button
 while True:
     
+    # Show status on datafile and checked for errors
     print('')
     print("At all times you can enter '5050' (which is all numbers from 1-100, summed) in a menu to quit the program.")
     print("Datafile: " + g.globalDataFile)
@@ -88,7 +89,8 @@ while True:
     elif menuChoice == 5:
         print("Quit has been chosen. I hope you enjoyed experiencing our menu. :^)")
         break
-
+    
+    # If the user choose to quit the program by entering '5050'
     elif g.pleaseQuitProgram == True:
         menuItems = np.array(["1. Yes, quit the program.", "2. No, please go back to the previous menu."])
         menuChoice = displayMenu("Are you sure you want to quit the program?", menuItems)

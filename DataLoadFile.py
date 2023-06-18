@@ -5,8 +5,18 @@ import pandas as pd
 # Import function used for global variables
 import globalVariablesFile as g
 
-def dataLoad():
-    # Author: Elisabeth Astrup Christensen, s224063@dtu.dk, 2023
+def dataLoad() -> pd.DataFrame:
+    '''
+    ### Function used to load data from a .csv file and display the loaded data.
+    
+    Parameters:
+        This is a void function.
+    
+    Returns:
+        - loadedData (pd.DataFrame): The data in pd.Dataframe format after it has been loaded from a .csv file
+
+    Author: Elisabeth Astrup Christensen, s224063@dtu.dk, 2023
+    '''
 
     # Load data if it exists
     found = False
@@ -44,7 +54,19 @@ def dataLoad():
     return loadedData
 
 
-def convertLoadedDataToGrades(loadedData):
+def convertLoadedDataToGrades(loadedData: pd.DataFrame) -> np.float64:
+    '''
+    ### Function used to convert loaedData (.csv format) to grades (np.array format with just the grades for the assignments).
+    
+    Parameters:
+        - loadedData (pd.DataFrame): The original data directly from the .csv file, in pd.Dataframe format
+    
+    Returns:
+        - grades (np.float64): The data in np.array format, with just the grades for the assignments
+        
+    Author: Elisabeth Astrup Christensen, s224063@dtu.dk, 2023
+    '''
+
     # Convert loadedData to grades
     grades = loadedData.iloc[:,2:]
     grades = np.array(grades)

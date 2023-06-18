@@ -9,6 +9,7 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
+import pandas as pd
 
 # Import other files
 from displayMenuFile import displayMenu
@@ -17,7 +18,7 @@ from FinalGradeFunction import computeFinalGrades
 # Import function used for global variables
 import globalVariablesFile as g
 
-def gradesPerAssignment(loadedData,grades):
+def gradesPerAssignment(loadedData: pd.DataFrame, grades: np.float64) -> None:
     # List with titles from data
     inp = grades.T
     inp = np.array(inp)
@@ -69,7 +70,7 @@ def gradesPerAssignment(loadedData,grades):
     plt.grid()
     plt.show()
 
-def finalGrades(loadedData,grades):
+def finalGrades(loadedData: pd.DataFrame, grades: np.float64) -> None:
     import numpy as np
     import matplotlib.pyplot as plt
     import math
@@ -96,7 +97,7 @@ def finalGrades(loadedData,grades):
     # Plot is now shown onscreen
 
 
-def plotFunction(checkedDataArray, loadedData):
+def plotFunction(checkedDataArray: np.float64, loadedData: pd.DataFrame) -> None:
     while True:
         # Converting grades from checkedDataArray (in case the user has clicked on "Check for data errors" button)
         grades = checkedDataArray[:,2:]
