@@ -4,6 +4,7 @@ import math
 
 def roundGrade(grades: np.float64) -> np.float64:
     # Round up if the grade is right in between two grades.
+    # Otherwise the function will round any number in a vector to the nearest number on the 7-step scale.
     # Author: Filip Pisinger, s224072@dtu.dk, 2023
     i = 0
     while i < len(grades):
@@ -24,7 +25,3 @@ def roundGrade(grades: np.float64) -> np.float64:
         i+=1
     gradesRounded = grades
     return gradesRounded
-
-# Test
-#inp = np.random.uniform(-3, 12, 10)
-#print(roundGrade(inp))
