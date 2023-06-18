@@ -33,7 +33,7 @@ Filip writes...
 The main script consists of the main menu in the program. Before the user gets to the menu, the user must enter a valid .csv data file. The main menu is run in a while loop, and the program stops when the while loop is broken. 
 In the main menu, the user can choose to:
         
-    1. "Load new data". This is done in the same way as when the data was loaded at the beginning of the program. 
+    ###1. "Load new data". This is done in the same way as when the data was loaded at the beginning of the program. 
         
     2. "Check for data errors". This is done using the checkErrors function. 
     Duplicate students are removed, and grades not on the 7-step grading scale are rounded to a valid grade.
