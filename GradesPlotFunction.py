@@ -41,11 +41,9 @@ def gradesPerAssignment(loadedData,grades):
     while i < len(data):
         meanValues[i] = np.mean(np.asarray(data[i],"int"))
         i+=1
-    #while i < len(data):
-        
     #Creating y axis:
     y = np.asarray(np.reshape(data, -1),dtype='float')
-    #Randomization Algorithm
+    #Randomization Algorithm - this helps with several grades with same value on the plots not being the same position
     i=0
     while i < len(x):
         x[i] += np.random.uniform(-0.1, 0.1, 1)[0]
@@ -71,6 +69,7 @@ def gradesPerAssignment(loadedData,grades):
     plt.legend()
     plt.grid()
     plt.show()
+    # Plot is now shown onscreen
 
 def finalGrades(loadedData,grades):
     import numpy as np
@@ -86,7 +85,7 @@ def finalGrades(loadedData,grades):
     inp = {'-3':data[0], '00':data[1], '02':data[2], '4':data[3],'7':data[4],'10':data[5],'12':data[6]}
     Grade = list(inp.keys())
     Amount = list(inp.values())
-    # creating the bar plot (This has been inspired by a github discussion post)
+    # creating the bar plot:
     plt.bar(Grade, Amount, color ='green',
             width = 0.4)
     plt.xlabel("Grade on 7-step scale")
@@ -98,6 +97,7 @@ def finalGrades(loadedData,grades):
 
 
 def plotFunction(grades, loadedData):
+    #Creates a menu to choose between plots. Input of numbers 1-3 will either activate a plot function above or exit to "main".
     while True:
         menuItems = np.array(["1. Plot: Grades Per Assignment", "2. Plot: Final Grades Distribution", "3. Return to menu"])
         menuChoice = displayMenu("Please enter a number corresponding to your choice of plot", menuItems)
