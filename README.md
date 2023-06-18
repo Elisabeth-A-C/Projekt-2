@@ -18,7 +18,7 @@ that has been used for bug testing in the program.
 
 
 ## Grade rounding function
-Filip writes...
+The grade rounding function will take any set of grades in an MxN matrix, and round all grades to the nearest 7-step scale grade (if they are not already). 
 
 
 ## Final grade function
@@ -26,7 +26,9 @@ The final grade function computes the final grade for each student from the assi
 
 
 ## Grades plot function
-Filip writes...
+The grades plot function is a visual representation of the grade distributions, via. plots. The function will plot accoriding to user choice, they are:
+ 1. Grades Per Assignment: Shows the distribution of individual grades over the various assignments. The mean of the grades will also be on the plots
+ 2. Final Grades Distribution: Shows the distribution of final grades of the students, in a boxplot.  
 
 
 ## Main script
