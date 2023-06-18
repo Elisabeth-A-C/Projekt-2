@@ -22,7 +22,7 @@ Filip writes...
 
 
 ## Final grade function
-The final grade function computes the final grade for each student from the assignment grades. If there's only one assignment for each student, this must be the final grade. If a student has received -3 in one or more of the assignments, the student must receive the final grade -3. Otherwise, the final grade is calculated from the average of all assignments when the lowest grade is removed. 
+The final grade function computes the final grade for each student from the assignment grades. If there's only one assignment for each student, this must be the final grade. If a student has received -3 in one or more of the assignments, the student must receive the final grade -3. Otherwise, the final grade is calculated from the average of all assignments when the lowest grade is removed. The grade is then rounded to a valid grade on the 7-step grading scale, using the roundGrade function.
 
 
 ## Grades plot function
@@ -33,8 +33,10 @@ Filip writes...
 The main script consists of the main menu in the program. Before the user gets to the menu, the user must enter a valid .csv data file. The main menu is run in a while loop, and the program stops when the while loop is broken. 
 In the main menu, the user can choose to:
     1. "Load new data". This is done in the same way as when the data was loaded at the beginning of the program. 
-    2. "Check for data errors". This is done using the checkErrors function. Duplicate students are removed, and grades not on the 7-step grading scale is rounded to a valid grade.
-    3. "
+    2. "Check for data errors". This is done using the checkErrors function. Duplicate students are removed, and grades not on the 7-step grading scale are rounded to a valid grade.
+    3. "Generate plots". This is done using functions from the GradesPlotFunction file.
+    4. "Display list of grades". This is done using the displayListOfGrades function. The data is shown, now including the final grade for each student, calculated using the computeFinalGrades function. 
+    5. "Quit". This is done by breaking the while loop that the main menu runs in. 
 
 
 ## Global variables
