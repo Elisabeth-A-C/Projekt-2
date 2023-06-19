@@ -58,14 +58,14 @@ def gradesPerAssignment(loadedData: pd.DataFrame, grades: np.float64) -> None:
         xAxisTicks += [names[i]] * len(names)
         i+=1
     # plotting
-    plt.plot(x, y, "r*")
+    plt.plot(x, y, "ro", markersize = 2)
     plt.plot(a, meanValues)
     plt.title("Grades for each assignment")
     plt.yticks([-3,0,2,4,7,10,12])
     plt.xlabel("Assignments")
     plt.ylabel("Grades")
     plt.xticks(a, names)
-    plt.legend(["Grades" , "Mean"])
+    plt.legend(["Grades" , "Mean"]) # obs: the line for mean cannot be seen in data file 'moredata.csv' since there's only 1 assignment and therfore mean cannot be computed
     plt.grid()
     plt.show()
 
@@ -88,7 +88,7 @@ def finalGrades(loadedData: pd.DataFrame, grades: np.float64) -> None:
     plt.bar(Grade, Amount, color ='green',
             width = 0.4)
     plt.xlabel("Grade on 7-step scale")
-    plt.ylabel("Amount of individual grade")
+    plt.ylabel("Number of students whom have received grade")
     plt.gca().yaxis.set_major_locator(mticker.MultipleLocator(1)) # to only show integers on y-axis
     plt.title("Distribution of grades")
     plt.grid(axis="y")
@@ -97,6 +97,10 @@ def finalGrades(loadedData: pd.DataFrame, grades: np.float64) -> None:
 
 
 def gradesPlot(checkedDataArray: np.float64, loadedData: pd.DataFrame) -> None:
+    # We have chosen to make the plot function dependent on input, so that the user of the interface,
+    # ~ may themselves choose which plot to show onscreen.
+    # Since the latest plot will always be in the way of the prior plotted.
+
     while True:
         # Converting grades from checkedDataArray (in case the user has clicked on "Check for data errors" button)
         grades = checkedDataArray[:,2:]
