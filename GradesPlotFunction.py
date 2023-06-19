@@ -96,7 +96,7 @@ def finalGrades(loadedData: pd.DataFrame, grades: np.float64) -> None:
     # Plot is now shown onscreen
 
 
-def plotFunction(checkedDataArray: np.float64, loadedData: pd.DataFrame) -> None:
+def gradesPlot(checkedDataArray: np.float64, loadedData: pd.DataFrame) -> None:
     while True:
         # Converting grades from checkedDataArray (in case the user has clicked on "Check for data errors" button)
         grades = checkedDataArray[:,2:]

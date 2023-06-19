@@ -10,15 +10,15 @@ def roundGrade(grades: np.float64) -> np.float64:
     while i < len(grades):
         if grades[i] >= 11:
             grades[i]=12
-        elif grades[i] >= 8.5 and grades[i] < 11:
+        elif grades[i] >= 8.5:
             grades[i]=10
-        elif grades[i] >= 5.5 and grades[i] < 8.5:
+        elif grades[i] >= 5.5:
             grades[i]=7
-        elif grades[i] >= 3 and grades[i] < 5.5:
+        elif grades[i] >= 3:
             grades[i]=4
-        elif grades[i] >= 1 and grades[i] < 3:
+        elif grades[i] >= 1:
             grades[i]=2
-        elif grades[i] >= -1.5 and grades[i] < 1:
+        elif grades[i] >= -1.5:
             grades[i]=0
         elif grades[i] < -1.5:
             grades[i]=-3

@@ -22,7 +22,7 @@ os.chdir(dname)
 from DataLoadFile import convertLoadedDataToGrades
 from DataLoadFile import dataLoad
 from displayMenuFile import displayMenu
-from GradesPlotFunction import plotFunction
+from GradesPlotFunction import gradesPlot
 from CheckDataErrorsFile import checkErrors
 from DisplayListOfGradesFile import displayListOfGrades
 
@@ -72,7 +72,7 @@ while True:
             checkedDataArray = np.array(loadedData)
         elif g.globalCheckErrors == "Yes":
             pass
-        plotFunction(checkedDataArray, loadedData)
+        gradesPlot(checkedDataArray, loadedData)
         
         if g.pleaseQuitProgram == True:
             break
