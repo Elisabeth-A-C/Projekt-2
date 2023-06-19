@@ -30,9 +30,9 @@ def displayListOfGrades(checkedDataArray: np.float64, loadedData: pd.DataFrame) 
         for y in range(len(checkedDataArrayPlusFinalGrades)):
             if y > x:
                 if checkedDataArrayPlusFinalGrades[x,1] > checkedDataArrayPlusFinalGrades[y,1]:
-                    t = checkedDataArrayPlusFinalGrades[x,1]
-                    checkedDataArrayPlusFinalGrades[x,1] = checkedDataArrayPlusFinalGrades[y,1]
-                    checkedDataArrayPlusFinalGrades[y,1] = t
+                    t = checkedDataArrayPlusFinalGrades[x,:].copy()
+                    checkedDataArrayPlusFinalGrades[x,:] = checkedDataArrayPlusFinalGrades[y,:]
+                    checkedDataArrayPlusFinalGrades[y,:] = t
     
     # Make columns for data in .csv format, and convert to .csv format to make it more visually appealing
     titles = list(loadedData)
