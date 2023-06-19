@@ -24,7 +24,7 @@ def displayMenu(prompt: str, options: str) -> float:
      '''
     
     print('')
-    print(prompt + '.')
+    print("In the input field: " + prompt + '.')
 
     # Display menu options
     for i in range(len(options)):
@@ -40,6 +40,6 @@ def displayMenu(prompt: str, options: str) -> float:
             g.pleaseQuitProgram = True
             break
         elif not(np.any(choice == np.arange(len(options))+1)):
-            print(prompt + ".")
+            print("In the input field: " + prompt + ".")
 
     return choice

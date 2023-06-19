@@ -1,4 +1,4 @@
-### Group GAUSS? ### #TO-DO: insert real group number
+### Group 4 ###
 ### Group Elif File ###
 
 '''
