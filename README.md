@@ -26,8 +26,8 @@ The final grade function computes the final grade for each student from the assi
 
 
 ## Grades plot function
-The grades plot function is a visual representation of the grade distributions, via. plots. The function will plot accoriding to user choice, they are:
- 1. Grades Per Assignment: Shows the distribution of individual grades over the various assignments. The mean of the grades will also be on the plots
+The grades plot function is a visual representation of the grade distributions, via. plots. The function will plot according to user choice, they are:
+ 1. Grades Per Assignment: Shows the distribution of individual grades over the various assignments. The mean of the grades will also be on the plots.
  2. Final Grades Distribution: Shows the distribution of final grades of the students, in a boxplot.  
 
 

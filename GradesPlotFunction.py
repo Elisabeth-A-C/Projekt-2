@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Wed Jun 14 08:16:18 2023
 
@@ -8,6 +7,8 @@ Created on Wed Jun 14 08:16:18 2023
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
+import pandas as pd
 
 # Import other files
 from displayMenuFile import displayMenu
@@ -16,13 +17,8 @@ from FinalGradeFunction import computeFinalGrades
 # Import function used for global variables
 import globalVariablesFile as g
 
-def gradesPerAssignment(loadedData,grades):
-    import numpy as np
-    import math
-    import matplotlib.pyplot as plt
+def gradesPerAssignment(loadedData: pd.DataFrame, grades: np.float64) -> None:
     # List with titles from data
-    grades = grades
-    loadedData = loadedData
     inp = grades.T
     inp = np.array(inp)
     names = list(loadedData)
@@ -33,7 +29,7 @@ def gradesPerAssignment(loadedData,grades):
     x = np.array([])
     i=0
     while i < len(data):
-        x = np.concatenate((x,np.ones(len(data[1]))*i))
+        x = np.concatenate((x,np.ones(len(data[0]))*i))
         i+=1
     # Creating mean values:
     i = 0
@@ -41,9 +37,12 @@ def gradesPerAssignment(loadedData,grades):
     while i < len(data):
         meanValues[i] = np.mean(np.asarray(data[i],"int"))
         i+=1
+    #while i < len(data):
+        
     #Creating y axis:
     y = np.asarray(np.reshape(data, -1),dtype='float')
-    #Randomization Algorithm - this helps with several grades with same value on the plots not being the same position
+
+    #Randomization Algorithm to visualize individual grades of same value
     i=0
     while i < len(x):
         x[i] += np.random.uniform(-0.1, 0.1, 1)[0]
@@ -60,18 +59,17 @@ def gradesPerAssignment(loadedData,grades):
         i+=1
     # plotting
     plt.plot(x, y, "r*")
-    plt.plot(a, meanValues,label="Mean")
+    plt.plot(a, meanValues)
     plt.title("Grades for each assignment")
     plt.yticks([-3,0,2,4,7,10,12])
     plt.xlabel("Assignments")
     plt.ylabel("Grades")
     plt.xticks(a, names)
-    plt.legend()
+    plt.legend(["Grades" , "Mean"])
     plt.grid()
     plt.show()
-    # Plot is now shown onscreen
 
-def finalGrades(loadedData,grades):
+def finalGrades(loadedData: pd.DataFrame, grades: np.float64) -> None:
     import numpy as np
     import matplotlib.pyplot as plt
     import math
@@ -85,35 +83,35 @@ def finalGrades(loadedData,grades):
     inp = {'-3':data[0], '00':data[1], '02':data[2], '4':data[3],'7':data[4],'10':data[5],'12':data[6]}
     Grade = list(inp.keys())
     Amount = list(inp.values())
+    fig = plt.figure(figsize = (10, 5))
     # creating the bar plot:
     plt.bar(Grade, Amount, color ='green',
             width = 0.4)
     plt.xlabel("Grade on 7-step scale")
     plt.ylabel("Amount of individual grade")
+    plt.gca().yaxis.set_major_locator(mticker.MultipleLocator(1)) # to only show integers on y-axis
     plt.title("Distribution of grades")
-    plt.grid()
+    plt.grid(axis="y")
     plt.show()
     # Plot is now shown onscreen
 
 
-def plotFunction(grades, loadedData):
-    #Creates a menu to choose between plots. Input of numbers 1-3 will either activate a plot function above or exit to "main".
+def plotFunction(checkedDataArray: np.float64, loadedData: pd.DataFrame) -> None:
     while True:
-        menuItems = np.array(["1. Plot: Grades Per Assignment", "2. Plot: Final Grades Distribution", "3. Return to menu"])
+        # Converting grades from checkedDataArray (in case the user has clicked on "Check for data errors" button)
+        grades = checkedDataArray[:,2:]
+
+        menuItems = np.array(["1. Plot: Grades Per Assignment", "2. Final Grades Distribution", "3. Return to menu"])
         menuChoice = displayMenu("Please enter a number corresponding to your choice of plot", menuItems)
 
         if menuChoice == 1:
-            print(" ")
-            result = gradesPerAssignment(loadedData,grades)
-
-            print(result)       
+            # PLotes the grades per assignment:
+            gradesPerAssignment(loadedData,grades)    
 
         elif menuChoice == 2:
-            print(" ")
-            result = finalGrades(loadedData,grades)
-            print(result)
-           
-            
+            # Plots the final grades:
+            finalGrades(loadedData,grades)
+        
         elif menuChoice == 3:
             # Go back to menu
             print(" ")
