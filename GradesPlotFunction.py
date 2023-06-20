@@ -96,20 +96,23 @@ def finalGrades(loadedData: pd.DataFrame, grades: np.float64) -> None:
     # Plot is now shown onscreen
 
 
+# We have choosen to give the gradePlot function the inputs checkedDataArray and loadedData wherefrom we compute 'grades'
+# ~ since we will need the columns from the .csv file for the plots, and grades is only the grades and in a np.array.
 def gradesPlot(checkedDataArray: np.float64, loadedData: pd.DataFrame) -> None:
     # We have chosen to make the plot function dependent on input, so that the user of the interface,
     # ~ may themselves choose which plot to show onscreen.
     # Since the latest plot will always be in the way of the prior plotted.
 
+    # Compute grades from checkedDataArray (in case the user has clicked on "Check for data errors" button)
+    grades = checkedDataArray[:,2:]
+
     while True:
-        # Converting grades from checkedDataArray (in case the user has clicked on "Check for data errors" button)
-        grades = checkedDataArray[:,2:]
 
         menuItems = np.array(["1. Plot: Grades Per Assignment", "2. Final Grades Distribution", "3. Return to menu"])
         menuChoice = displayMenu("Please enter a number corresponding to your choice of plot", menuItems)
 
         if menuChoice == 1:
-            # PLotes the grades per assignment:
+            # Plotes the grades per assignment:
             gradesPerAssignment(loadedData,grades)    
 
         elif menuChoice == 2:
