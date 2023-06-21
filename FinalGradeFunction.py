@@ -4,6 +4,7 @@ import numpy as np
 # Import other files
 from GradeRoundingFunction import roundGrade
 
+
 def computeFinalGrades(grades: np.float64) -> np.float64:
     '''
     ### Computes the final grade for each student.

@@ -1,9 +1,17 @@
+'''
+The first function in this file loads the data in a pd.DataFrame format,
+and the second file converts the data into an np.array format that only 
+contains the grades for the assignments.
+
+'''
+
 # Importing libraries
 import numpy as np
 import pandas as pd
 
 # Import function used for global variables
-import globalVariablesFile as g
+import GlobalVariablesFile as g
+
 
 def dataLoad() -> pd.DataFrame:
     '''

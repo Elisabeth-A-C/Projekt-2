@@ -20,13 +20,13 @@ os.chdir(dname)
 # Import other files
 from DataLoadFile import convertLoadedDataToGrades
 from DataLoadFile import dataLoad
-from displayMenuFile import displayMenu
+from DisplayMenuFile import displayMenu
 from GradesPlotFunction import gradesPlot
 from CheckDataErrorsFile import checkErrors
 from DisplayListOfGradesFile import displayListOfGrades
 
 # Import function used for global variables
-import globalVariablesFile as g
+import GlobalVariablesFile as g
 
 
 ### MAIN SCRIPT ###

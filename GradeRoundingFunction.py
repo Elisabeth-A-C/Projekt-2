@@ -1,6 +1,7 @@
 # Importing libraries
 import numpy as np
 
+
 def roundGrade(grades: np.float64) -> np.float64:
     # Round up if the grade is right in between two grades.
     # Otherwise the function will round any number in a vector to the nearest number on the 7-step scale.

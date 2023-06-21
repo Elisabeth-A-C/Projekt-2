@@ -2,10 +2,11 @@
 import numpy as np
 
 # Import other files
-from inputNumberFile import inputNumber
+from InputNumberFile import inputNumber
 
 # Import function used for global variables
-import globalVariablesFile as g
+import GlobalVariablesFile as g
+
 
 def displayMenu(prompt: str, options: str) -> float:
 # This function was created during the exercises in module 5.

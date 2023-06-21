@@ -5,6 +5,7 @@ import pandas as pd
 # Import other files
 from GradeRoundingFunction import roundGrade
 
+
 def checkErrors(loadedData: pd.DataFrame) -> np.float64:
     '''
     ### If the user choose to "Check for data errors" in the main menu, this function will be called, 

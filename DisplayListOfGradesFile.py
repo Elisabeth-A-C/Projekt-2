@@ -5,6 +5,7 @@ import pandas as pd
 # Import other files
 from FinalGradeFunction import computeFinalGrades
 
+
 def displayListOfGrades(checkedDataArray: np.float64, loadedData: pd.DataFrame) -> None:
     '''
     ### If the user choose to "Display list of grades" in the main menu, this function will be called, 

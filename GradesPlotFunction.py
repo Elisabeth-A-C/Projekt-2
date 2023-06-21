@@ -1,8 +1,12 @@
 """
-Created on Wed Jun 14 08:16:18 2023
+The two first functions in this file is used to make the two plots that
+the user can choose between, and these two functions are used in the last 
+function that shows the menu for the plots.
 
-@author: migpi
+Author: Filip Pisinger, s224072@dtu.dk, 2023
+
 """
+
 # Importing libraries
 import numpy as np
 import math
@@ -11,11 +15,12 @@ import matplotlib.ticker as mticker
 import pandas as pd
 
 # Import other files
-from displayMenuFile import displayMenu
+from DisplayMenuFile import displayMenu
 from FinalGradeFunction import computeFinalGrades
 
 # Import function used for global variables
-import globalVariablesFile as g
+import GlobalVariablesFile as g
+
 
 def gradesPerAssignment(loadedData: pd.DataFrame, grades: np.float64) -> None:
     # List with titles from data
