@@ -1,7 +1,3 @@
-# Importing libraries
-import numpy as np
-import math
-
 def inputNumber(prompt: str) -> float:
 # This function was created during the exercises in module 5.
 

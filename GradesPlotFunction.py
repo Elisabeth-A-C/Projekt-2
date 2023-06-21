@@ -37,7 +37,6 @@ def gradesPerAssignment(loadedData: pd.DataFrame, grades: np.float64) -> None:
     while i < len(data):
         meanValues[i] = np.mean(np.asarray(data[i],"int"))
         i+=1
-    #while i < len(data):
         
     #Creating y axis:
     y = np.asarray(np.reshape(data, -1),dtype='float')

@@ -1,6 +1,5 @@
 # Importing libraries
 import numpy as np
-import math
 
 def roundGrade(grades: np.float64) -> np.float64:
     # Round up if the grade is right in between two grades.

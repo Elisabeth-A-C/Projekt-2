@@ -10,7 +10,6 @@ that it is comma-seperated, and that it contains at least one student and one as
 
 # Importing libraries
 import numpy as np
-import math
 
 # Setting directory to current file directory
 import os
@@ -70,8 +69,7 @@ while True:
     elif menuChoice == 3: 
         if g.globalCheckErrors == "No":
             checkedDataArray = np.array(loadedData)
-        elif g.globalCheckErrors == "Yes":
-            pass
+
         gradesPlot(checkedDataArray, loadedData)
         
         if g.pleaseQuitProgram == True:
@@ -81,8 +79,7 @@ while True:
     elif menuChoice == 4:
         if g.globalCheckErrors == "No":
             checkedDataArray = np.array(loadedData)
-        elif g.globalCheckErrors == "Yes":
-            pass
+        
         displayListOfGrades(checkedDataArray, loadedData)
 
     # If the user choose to "Quit" 
@@ -101,6 +98,3 @@ while True:
         if menuChoice == 2:
             g.pleaseQuitProgram = False
             continue
-
-    else:
-        pass

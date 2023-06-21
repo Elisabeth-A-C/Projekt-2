@@ -1,15 +1,9 @@
 # Importing libraries
 import numpy as np
 import pandas as pd
-import math
 
 # Import other files
-from DataLoadFile import dataLoad
-from DataLoadFile import convertLoadedDataToGrades
 from GradeRoundingFunction import roundGrade
-
-# Import function used for global variables
-import globalVariablesFile as g
 
 def checkErrors(loadedData: pd.DataFrame) -> np.float64:
     '''

@@ -1,6 +1,5 @@
 # Importing libraries
 import numpy as np
-import math
 
 # Import other files
 from inputNumberFile import inputNumber

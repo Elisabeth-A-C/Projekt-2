@@ -1,10 +1,8 @@
 # Import libraries
 import numpy as np
-import math
 
 # Import other files
 from GradeRoundingFunction import roundGrade
-from DataLoadFile import convertLoadedDataToGrades
 
 def computeFinalGrades(grades: np.float64) -> np.float64:
     '''
@@ -42,6 +40,3 @@ def computeFinalGrades(grades: np.float64) -> np.float64:
                 gradesFinal = roundGrade(gradesFinal)
 
     return gradesFinal
-
-# Test
-#print(computeFinalGrades(np.array([[-3,4,7],[0,4,4],[0,10,4],[4,4,12],[10,12,12]])))
